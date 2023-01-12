@@ -1,0 +1,80 @@
+
+<div>
+    <p></p>
+    <h3>Корзина</h3>
+    <p></p>
+    <div ng-show="cart.items.length > 0">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <td>Название</td>
+                <td width="1%"></td>
+                <td ALIGN="CENTER" width="5%">Количество</td>
+                <td width="1%"></td>
+                <td align="center">Цена</td>
+                <td align="center">Итого</td>
+                <td></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="c in cart.items">
+                <td>{{c.title}}</td>
+                <td align="right" width="1%"><button class="btn btn-danger" ng-click="subProductAmount(c.id)">-</button></td>
+                <td align="center" width="5%">{{c.amount}}</td>
+                <td align="left" width="1%"><button class="btn btn-primary" ng-click="addProductAmount(c.id)">+</button></td>
+                <td align="center">{{c.price}}</td>
+                <td align="center">{{c.totalPrice}}</td>
+                <td>
+                    <button class="btn btn-danger" ng-click="removeItem(c.id)">Удалить</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-danger" ng-click="clearCart()">Очистить корзину</button>
+        <br>
+        <br>
+        <form class="align-middle" ng-submit="createOrder()">
+            <div class="input-group input-group-sm" style="padding: 4px;">
+                <table>
+                    <tr>
+                        <td>
+                            <h3>Заполните адрес доставки:</h3>
+                            <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Введите город:</td>
+                        <td><input id="navCityField" class="form-control" ng-model="deliveryadress.city" type="text"
+                                   aria-describedby="inputGroup-sizing-sm" style="margin-left: 10px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Введите улицу:</td>
+                        <td><input id="navStreetField" class="form-control" ng-model="deliveryadress.street" type="text"
+                                   aria-describedby="inputGroup-sizing-sm" style="margin-left: 10px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Ведите номер дома:</td>
+                        <td><input id="navHomeNumberField" class="form-control" ng-model="deliveryadress.homeNumber" type="text"
+                                   aria-describedby="inputGroup-sizing-sm" style="margin-left: 10px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Введите номер квартиры:</td>
+                        <td><input id="navRoomNumberField" class="form-control" ng-model="deliveryadress.roomNumber" type="text"
+                                   aria-describedby="inputGroup-sizing-sm" style="margin-left: 10px;"></td>
+                    </tr>
+
+                    <tr>
+                        <td><br></td>
+                    </tr>
+                </table>
+            </div>
+            <button class="btn btn-secondary" ng-click="guestCreateOrder()" ng-show="!isUserLoggedIn()">Оформить заказ</button>
+            <button class="btn btn-primary" ng-show="isUserLoggedIn()" type="submit">Оформить заказ</button>
+        </form>
+        <p></p>
+
+    </div>
+    <div ng-show="cart.items.length == 0">
+        <p>Ваша корзина пуста</p>
+    </div>
+</div>
