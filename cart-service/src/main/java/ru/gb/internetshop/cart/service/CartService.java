@@ -1,5 +1,6 @@
 package ru.gb.internetshop.cart.service;
 
+
 import api.ProductDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -69,10 +70,15 @@ public class CartService {
 
         if (guestCart.getItems().size()!=0){
             for (CartItem g:guestCart.getItems()){
-                ProductDto productDto=new ProductDto();
-                productDto.setId(g.getProductId());
-                productDto.setTitle(g.getProductTitle());
-                productDto.setPrice(g.getPrice());
+                ProductDto productDto=ProductDto.Builder.newBuilder()
+                        .withId(g.getProductId())
+                        .withTitle(g.getProductTitle())
+                        .withPrice(g.getPrice())
+                        .build();
+                //ProductDto productDto=new ProductDto();
+//                productDto.setId();
+//                productDto.setTitle();
+//                productDto.setPrice();
                 for (int i=0;i<g.getAmount();i++){
                     userCart.add(productDto);
                 }

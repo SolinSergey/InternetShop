@@ -7,11 +7,18 @@ import api.ProductDto;
 @Component
 public class ProductConverter {
     public ProductDto entityToProductDto (Product product){
-        ProductDto productDto=new ProductDto();
-        productDto.setId(product.getId());
-        productDto.setTitle(product.getTitle());
-        productDto.setPrice(product.getPrice());
-        productDto.setCategory(product.getCategory().getTitle());
+        ProductDto productDto=ProductDto.Builder.newBuilder()
+                .withId(product.getId())
+                .withTitle(product.getTitle())
+                .withPrice(product.getPrice())
+                .withCategory(product.getCategory().getTitle())
+                .build();
+
+//        ProductDto productDto=new ProductDto();
+//        productDto.setId();
+//        productDto.setTitle();
+//        productDto.setPrice();
+//        productDto.setCategory();
         return productDto;
     }
 }

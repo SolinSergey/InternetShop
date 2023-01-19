@@ -29,7 +29,7 @@ public class OrderItem {
     @Column(name="amount")
     private int amount;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<OrderItem> items;
+//    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+//    private List<OrderItem> items;
 
 }

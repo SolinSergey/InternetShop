@@ -54,7 +54,7 @@ public class UserService implements UserDetailsService {
                     newUser.setPassword(passwordEncoder.encode(registerUserDto.getPassword()));
                     newUser.setEmail(registerUserDto.getEmail());
                     Collection<Role> roles = new ArrayList<>();
-                    roles.add(new Role(4L,"USER_ROLE"));
+                    roles.add(new Role(1L,"USER_ROLE"));
                     newUser.setRoles(roles);
                     userRepository.save(newUser);
                     return new ResponseEntity(HttpStatus.OK);
