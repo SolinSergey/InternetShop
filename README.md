@@ -24,9 +24,13 @@
     FlyWay,
     H2 database
 
-Для запуска микросервисов:  ./auth-service/ru/gb/internetshop/InternetShopAuth
+Для запуска микросервисов:  
+                            ./auth-service/ru/gb/internetshop/InternetShopAuth
+
                             ./cart-service/ru/gb/internetshop/cart/InternetShopCart
+                            
                             ./core-service/ru/gb/internetshop/InternetShopCore
+                            
                             ./front-service/ru/gb/internetshop/InternetShopFront
 
 
