@@ -26,12 +26,15 @@
 
 Для запуска микросервисов:
                             
-                            ./auth-service/ru/gb/internetshop/InternetShopAuth
+./auth-service/ru/gb/internetshop/InternetShopAuth
 
-                            ./cart-service/ru/gb/internetshop/cart/InternetShopCart
+./cart-service/ru/gb/internetshop/cart/InternetShopCart
                             
-                            ./core-service/ru/gb/internetshop/InternetShopCore
+./core-service/ru/gb/internetshop/InternetShopCore
                             
-                            ./front-service/ru/gb/internetshop/InternetShopFront
+./front-service/ru/gb/internetshop/InternetShopFront
+
+./front-service/ru/gb/internetshop/gateway/InternetShopGateway
+
 
 
